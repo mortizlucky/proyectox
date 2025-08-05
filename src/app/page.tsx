@@ -1,103 +1,203 @@
-import Image from "next/image";
+  import Link from 'next/link';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+   
+
+  
+  return (
+    <main>
+     
+
+      <header className="fixed top-0 w-full z-50 bg-white shadow">
+
+  <div className="header">
+      <img src="/ES.png" alt="Enterprise Solutions Apps" className="w-44" />
+      
+    
+
+
+    <nav className="flex gap-4 items-center text-sm sm:text-base">
+           <a href="#" className="hover:text-blue-600">Inicio</a>
+          <a href="#nosotros" className="hover:text-blue-600">Nosotros</a>
+          <a href="#servicios" className="hover:text-blue-600">Servicios</a>
+          
+<Link href="/contacto" className="hover:text-blue-600">
+  Contáctanos
+</Link>
+          <a href="#" className="btnportal">Iniciar Sesión</a>
+        </nav>
+  </div>
+</header>
+
+{/* Hero Video */}
+      <div className="relative w-full h-[500px] overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover brightness-[35%] z-0"
+        >
+          <source src="/174086-850404739.mp4" type="video/mp4" />
+          Tu navegador no soporta el video HTML5.
+        </video>
+
+        {/* Texto encima del video */}
+        <div className="relative z-10 h-full flex flex-col justify-center items-center text-white text-center px-4">
+          <h1 className="text-3xl sm:text-5xl font-bold mb-6">
+           Enterprise Solutions Apps
+          </h1>
+          <p className="text-lg sm:text-xl mb-4">
+            Transformamos necesidades con soluciones a la medida
+          </p>
+          <h3 className="text-md sm:text-lg max-w-3xl">
+            Diseñamos y desarrollamos soluciones de software que impulsan la transformación digital de empresas en Colombia y Latinoamérica.
+          </h3>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+
+<section className="bg-gray-50 py-12 px-6 sm:px-12">
+ 
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    {/* Card 1 */}
+    <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition duration-300">
+      <div className="flex justify-center mb-4">
+        <div className="bg-indigo-100 p-4 rounded-full">
+          <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path d="M9.75 17L4 12l5.75-5M4 12h16"></path>
+          </svg>
+        </div>
+      </div>
+      <h3 className="text-lg font-semibold text-gray-800 mb-2">Misión</h3>
+      <p className="text-gray-600 text-sm">Entendemos tus necesidades para crear soluciones digitales innovadoras y seguras.</p>
     </div>
+
+    {/* Card 2 */}
+    <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition duration-300">
+      <div className="flex justify-center mb-4">
+        <div className="bg-green-100 p-4 rounded-full">
+          <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path d="M12 6v6l4 2"></path>
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+        </div>
+      </div>
+      <h3 className="text-lg font-semibold text-gray-800 mb-2">Calidad</h3>
+      <p className="text-gray-600 text-sm">Desarrollamos con estándares de calidad y tecnologías de última generación.</p>
+    </div>
+
+    {/* Card 3 */}
+    <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition duration-300">
+      <div className="flex justify-center mb-4">
+        <div className="bg-yellow-100 p-4 rounded-full">
+          <svg className="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+      </div>
+      <h3 className="text-lg font-semibold text-gray-800 mb-2">Innovación</h3>
+      <p className="text-gray-600 text-sm">Apostamos por la transformación digital con tecnologías modernas y eficientes.</p>
+    </div>
+
+    {/* Card 4 */}
+    <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition duration-300">
+      <div className="flex justify-center mb-4">
+        <div className="bg-red-100 p-4 rounded-full">
+          <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+      </div>
+      <h3 className="text-lg font-semibold text-gray-800 mb-2">Compromiso</h3>
+      <p className="text-gray-600 text-sm">Acompañamos tu proyecto hasta lograr los resultados esperados.</p>
+    </div>
+  </div>
+</section>
+
+
+ {/* Nosotros */}
+<section id="nosotros" className="py-30 bg-gray-50">
+ <div className="max-w-7xl mx-auto px-6">
+    <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Nosotros</h2>
+    <p className="text-gray-600 text-lg leading-relaxed">
+      En <strong>Enterprise Solutions Apps</strong> nos dedicamos a ofrecer soluciones tecnológicas y servicios especializados con un enfoque centrado en la calidad, la innovación y la confianza. Nuestro compromiso es acompañar a nuestros clientes en sus procesos de transformación digital y optimización operativa.
+    </p>
+    <p className="text-gray-600 text-lg leading-relaxed mt-4">
+      Contamos con un equipo multidisciplinario de profesionales altamente calificados que trabajan con pasión y responsabilidad para generar un impacto positivo en cada proyecto. En <strong>Enterprise Solutions Apps</strong>, creemos en el poder de la tecnología como motor de crecimiento y desarrollo sostenible.
+    </p>
+  </div>
+</section>
+
+ {/* Servicios */}
+<section id="servicios" className="py-30 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-6">
+    <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Nuestros Servicios</h2>
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      {/* Servicio 1 */}
+      <div className="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition-all">
+        <div className="mb-4">
+          <span className="inline-block bg-blue-100 text-blue-600 p-3 rounded-full">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M9 17v-2a4 4 0 014-4h6"></path>
+              <path d="M15 21h6v-6"></path>
+              <path d="M16 5H8a4 4 0 00-4 4v12h12a4 4 0 004-4v-5"></path>
+            </svg>
+          </span>
+        </div>
+        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Software a la Medida</h3>
+        <p className="text-gray-600">
+          Creamos soluciones digitales personalizadas para tu empresa: desde sistemas internos hasta plataformas complejas que impulsan eficiencia y crecimiento.
+        </p>
+      </div>
+
+      {/* Servicio 2 */}
+      <div className="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition-all">
+        <div className="mb-4">
+          <span className="inline-block bg-green-100 text-green-600 p-3 rounded-full">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M3 5h18M9 3v2m6-2v2M4 11h16M4 17h16M10 21h4"></path>
+            </svg>
+          </span>
+        </div>
+        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Aplicaciones Web</h3>
+        <p className="text-gray-600">
+          Desarrollamos apps web modernas, seguras y adaptables, con enfoque en rendimiento, usabilidad y acceso desde cualquier dispositivo.
+        </p>
+      </div>
+
+      {/* Servicio 3 */}
+      <div className="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition-all">
+        <div className="mb-4">
+          <span className="inline-block bg-indigo-100 text-indigo-600 p-3 rounded-full">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M9.75 3L8 6H5.25L6.75 9L5.25 12H8l1.75 3 1.75-3h2.75L15 9l-1.75-3H10.5L9.75 3z"></path>
+            </svg>
+          </span>
+        </div>
+        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Consultoría Tecnológica</h3>
+        <p className="text-gray-600">
+          Asesoramos a tu empresa en la adopción de tecnología, optimización de procesos y toma de decisiones estratégicas en TI.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+      <footer className="footer">
+        <p>© 2025 Enterpise Solutions Apps S.A. Todos los derechos reservados.</p>
+      </footer>
+    </main>
+    
   );
+  
 }
