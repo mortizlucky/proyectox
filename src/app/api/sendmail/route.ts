@@ -32,7 +32,7 @@ export async function POST(req: Request) {
   try {
     await transporter.sendMail(mailOptions);
    return new Response(JSON.stringify({ success: true }), { status: 200 });
-  } catch (err: any) {
+  } catch (err) {
   console.error('Error al enviar correo:', err);  // <-- imprime el error real
   return new Response(JSON.stringify({ success: false, error: err.message }), { status: 500 });
 }
