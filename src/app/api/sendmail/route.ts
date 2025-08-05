@@ -33,7 +33,8 @@ export async function POST(req: Request) {
     await transporter.sendMail(mailOptions);
    return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (err) {
-  console.error('Error al enviar correo:', err);  // <-- imprime el error real
-  return new Response(JSON.stringify({ success: false, error: err.message }), { status: 500 });
+  console.error('Error al enviar correo:', err);
+  const errorMessage = err instanceof Error ? err.message : 'Error desconocido';
+  return new Response(JSON.stringify({ success: false, error: errorMessage }), { status: 500 });
 }
 }
