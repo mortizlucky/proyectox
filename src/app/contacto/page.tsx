@@ -94,15 +94,15 @@ const [menuOpen, setMenuOpen] = useState(false)
   ${menuOpen ? 'flex' : 'hidden'} sm:flex`}
 >
 
-          <a onClick={handleLinkClick} href="/" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Inicio</a>
-          <a onClick={handleLinkClick} href="/#nosotros" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Nosotros</a>
-          <a onClick={handleLinkClick} href="/#servicios" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Servicios</a>
+          <Link onClick={handleLinkClick} href="/" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Inicio</Link>
+          <Link onClick={handleLinkClick} href="/#nosotros" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Nosotros</Link>
+          <Link onClick={handleLinkClick} href="/#servicios" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Servicios</Link>
 
           <Link onClick={handleLinkClick} href="#" className="text-white bg-#064077 w-full sm:w-auto block py-2 sm:py-0">
             Contáctanos
           </Link>
 
-          <a onClick={handleLinkClick} href="#" className="btnportal bg-transparent sm:w-auto block py-2 sm:py-0">Iniciar Sesión</a>
+          <Link onClick={handleLinkClick} href="#" className="btnportal bg-transparent sm:w-auto block py-2 sm:py-0">Iniciar Sesión</Link>
         </nav>
       </div>
     </header>
