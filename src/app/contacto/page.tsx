@@ -1,6 +1,6 @@
-'use client';
-import Link from 'next/link';
-import { useState } from 'react';
+  'use client'
+  import Link from 'next/link';
+  import { useState } from "react"
 
 export default function Contacto() {
   const [formData, setFormData] = useState({
@@ -10,7 +10,8 @@ export default function Contacto() {
   });
 
   const [status, setStatus] = useState('');
-
+const [menuOpen, setMenuOpen] = useState(false)
+   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
@@ -41,29 +42,71 @@ export default function Contacto() {
     }
   };
 
-  
+  const handleLinkClick = () => {
+    if (window.innerWidth < 640) {
+      setMenuOpen(false)
+    }
+  }
 
   return (
 
     <main>
-      <header className="fixed top-0 w-full z-50 bg-white shadow">
-        <div className="header">
-          <img src="/ES.png" alt="Enterprise Solutions Apps" className="w-44" />
-          <nav className="flex gap-4 items-center text-sm sm:text-base">
-            <Link href="/" className="hover:text-blue-600">
-              Inicio
-            </Link>    
-             <Link href="/#nosotros" className="hover:text-blue-600">
-              Nosotros
-            </Link>   
-             <Link href="/#servicios" className="hover:text-blue-600">
-              Servicios
-            </Link>   
-              <a href="#" className="hover:text-blue-600">Contáctanos</a>
-              <a href="#" className="btnportal">Iniciar Sesión</a>
-          </nav>
-        </div>
-      </header>
+      <header className="fixed top-0 w-full z-50 bg-black shadow">
+      
+      <div className="header flex justify-between items-center px-4 py-2 bg-white shadow-md relative z-50">
+        <img src="/ES.png" alt="Enterprise Solutions Apps" className="w-44" />
+
+        {/* Botón Hamburguesa (solo en móviles) */}
+        <button
+          className="sm:hidden text-white focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {menuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+
+        {/* Menú de navegación */}
+        <nav
+  className={`absolute sm:static top-full left-0 w-full sm:w-auto sm:bg-transparent bg-[#053460] text-white shadow sm:shadow-none px-4 sm:px-0 
+  flex-col sm:flex-row sm:flex gap-4 items-start sm:items-center text-sm sm:text-base transition-all duration-200 
+  ${menuOpen ? 'flex' : 'hidden'} sm:flex`}
+>
+
+          <a onClick={handleLinkClick} href="/" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Inicio</a>
+          <a onClick={handleLinkClick} href="/#nosotros" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Nosotros</a>
+          <a onClick={handleLinkClick} href="/#servicios" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Servicios</a>
+
+          <Link onClick={handleLinkClick} href="#" className="text-white bg-#064077 w-full sm:w-auto block py-2 sm:py-0">
+            Contáctanos
+          </Link>
+
+          <a onClick={handleLinkClick} href="#" className="btnportal bg-transparent sm:w-auto block py-2 sm:py-0">Iniciar Sesión</a>
+        </nav>
+      </div>
+    </header>
+
       
     
     <section id="contacto" className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">

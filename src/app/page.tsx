@@ -5,6 +5,11 @@
 export default function Home() {
  const [menuOpen, setMenuOpen] = useState(false)
    
+ const handleLinkClick = () => {
+    if (window.innerWidth < 640) {
+      setMenuOpen(false)
+    }
+  }
 
   
   return (
@@ -54,15 +59,15 @@ export default function Home() {
   ${menuOpen ? 'flex' : 'hidden'} sm:flex`}
 >
 
-          <a href="#" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Inicio</a>
-          <a href="#nosotros" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Nosotros</a>
-          <a href="#servicios" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Servicios</a>
+          <a onClick={handleLinkClick} href="#" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Inicio</a>
+          <a onClick={handleLinkClick} href="#nosotros" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Nosotros</a>
+          <a onClick={handleLinkClick} href="#servicios" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Servicios</a>
 
-          <Link href="/contacto" className="text-white bg-#064077 w-full sm:w-auto block py-2 sm:py-0">
+          <Link onClick={handleLinkClick} href="/contacto" className="text-white bg-#064077 w-full sm:w-auto block py-2 sm:py-0">
             Contáctanos
           </Link>
 
-          <a href="#" className="btnportal bg-transparent sm:w-auto block py-2 sm:py-0">Iniciar Sesión</a>
+          <a onClick={handleLinkClick} href="#" className="btnportal bg-transparent sm:w-auto block py-2 sm:py-0">Iniciar Sesión</a>
         </nav>
       </div>
     </header>
@@ -103,9 +108,8 @@ export default function Home() {
     <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition duration-300">
       <div className="flex justify-center mb-4">
         <div className="bg-indigo-100 p-4 rounded-full">
-          <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path d="M9.75 17L4 12l5.75-5M4 12h16"></path>
-          </svg>
+          <img src="/mision.png" alt="Enterprise Solutions Apps" className="w-10" />
+
         </div>
       </div>
       <h3 className="text-lg font-semibold text-gray-800 mb-2">Misión</h3>
@@ -116,10 +120,7 @@ export default function Home() {
     <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition duration-300">
       <div className="flex justify-center mb-4">
         <div className="bg-green-100 p-4 rounded-full">
-          <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path d="M12 6v6l4 2"></path>
-            <circle cx="12" cy="12" r="10"></circle>
-          </svg>
+          <img src="/calidad.png" alt="Enterprise Solutions Apps" className="w-10" />
         </div>
       </div>
       <h3 className="text-lg font-semibold text-gray-800 mb-2">Calidad</h3>
@@ -130,9 +131,7 @@ export default function Home() {
     <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition duration-300">
       <div className="flex justify-center mb-4">
         <div className="bg-yellow-100 p-4 rounded-full">
-          <svg className="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
+          <img src="/innovacion.png" alt="Enterprise Solutions Apps" className="w-10" />
         </div>
       </div>
       <h3 className="text-lg font-semibold text-gray-800 mb-2">Innovación</h3>
@@ -142,10 +141,9 @@ export default function Home() {
     {/* Card 4 */}
     <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition duration-300">
       <div className="flex justify-center mb-4">
-        <div className="bg-red-100 p-4 rounded-full">
-          <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path d="M5 13l4 4L19 7"></path>
-          </svg>
+        <div className="bg-gray-100 p-4 rounded-full">
+            <img src="/compromiso.png" alt="Enterprise Solutions Apps" className="w-10" />
+        
         </div>
       </div>
       <h3 className="text-lg font-semibold text-gray-800 mb-2">Compromiso</h3>
