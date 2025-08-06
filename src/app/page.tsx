@@ -1,7 +1,9 @@
+  'use client'
   import Link from 'next/link';
+  import { useState } from "react"
 
 export default function Home() {
-
+ const [menuOpen, setMenuOpen] = useState(false)
    
 
   
@@ -9,26 +11,61 @@ export default function Home() {
     <main>
      
 
-      <header className="fixed top-0 w-full z-50 bg-white shadow">
-
-  <div className="header">
-      <img src="/ES.png" alt="Enterprise Solutions Apps" className="w-44" />
+      <header className="fixed top-0 w-full z-50 bg-black shadow">
       
-    
+      <div className="header flex justify-between items-center px-4 py-2 bg-white shadow-md relative z-50">
+        <img src="/ES.png" alt="Enterprise Solutions Apps" className="w-44" />
 
+        {/* Botón Hamburguesa (solo en móviles) */}
+        <button
+          className="sm:hidden text-white focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {menuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
 
-    <nav className="flex gap-4 items-center text-sm sm:text-base">
-           <a href="#" className="hover:text-blue-600">Inicio</a>
-          <a href="#nosotros" className="hover:text-blue-600">Nosotros</a>
-          <a href="#servicios" className="hover:text-blue-600">Servicios</a>
-          
-<Link href="/contacto" className="hover:text-blue-600">
-  Contáctanos
-</Link>
-          <a href="#" className="btnportal">Iniciar Sesión</a>
+        {/* Menú de navegación */}
+        <nav
+  className={`absolute sm:static top-full left-0 w-full sm:w-auto sm:bg-transparent bg-[#053460] text-white shadow sm:shadow-none px-4 sm:px-0 
+  flex-col sm:flex-row sm:flex gap-4 items-start sm:items-center text-sm sm:text-base transition-all duration-200 
+  ${menuOpen ? 'flex' : 'hidden'} sm:flex`}
+>
+
+          <a href="#" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Inicio</a>
+          <a href="#nosotros" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Nosotros</a>
+          <a href="#servicios" className="text-white hover:text-blue-600 w-full sm:w-auto block py-2 sm:py-0">Servicios</a>
+
+          <Link href="/contacto" className="text-white bg-#064077 w-full sm:w-auto block py-2 sm:py-0">
+            Contáctanos
+          </Link>
+
+          <a href="#" className="btnportal bg-transparent sm:w-auto block py-2 sm:py-0">Iniciar Sesión</a>
         </nav>
-  </div>
-</header>
+      </div>
+    </header>
 
 {/* Hero Video */}
       <div className="relative w-full h-[500px] overflow-hidden">
@@ -122,11 +159,15 @@ export default function Home() {
 <section id="nosotros" className="py-30 bg-gray-50">
  <div className="max-w-7xl mx-auto px-6">
     <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Nosotros</h2>
-    <p className="text-gray-600 text-lg leading-relaxed">
-      En <strong>Enterprise Solutions Apps</strong> nos dedicamos a ofrecer soluciones tecnológicas y servicios especializados con un enfoque centrado en la calidad, la innovación y la confianza. Nuestro compromiso es acompañar a nuestros clientes en sus procesos de transformación digital y optimización operativa.
+    <p className="text-gray-600 text-lg leading-relaxed text-justify">
+      En <strong>Enterprise Solutions Apps</strong> nos especializamos en brindar soluciones tecnológicas y servicios especializados, con un enfoque firme en la
+    <strong> calidad, la innovación y la confianza.</strong> Nuestro propósito es acompañar a nuestros clientes en sus procesos de
+    <strong>transformación digital y optimización operativa</strong>, aportando valor en cada etapa.
     </p>
-    <p className="text-gray-600 text-lg leading-relaxed mt-4">
-      Contamos con un equipo multidisciplinario de profesionales altamente calificados que trabajan con pasión y responsabilidad para generar un impacto positivo en cada proyecto. En <strong>Enterprise Solutions Apps</strong>, creemos en el poder de la tecnología como motor de crecimiento y desarrollo sostenible.
+    <p className="text-gray-600 text-lg leading-relaxed mt-4 text-justify">
+      Contamos con un <strong>equipo multidisciplinario de profesionales altamente capacitados </strong>, 
+      que trabaja con compromiso, integridad y pasión para generar resultados significativos. 
+      En Enterprise Solutions Apps, estamos convencidos de que la <strong>tecnología es un motor clave para el crecimiento sostenible </strong> y el desarrollo competitivo de las organizaciones.
     </p>
   </div>
 </section>
