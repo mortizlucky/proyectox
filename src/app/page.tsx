@@ -67,7 +67,7 @@ export default function Home() {
             Contáctanos
           </Link>
 
-          <Link onClick={handleLinkClick} href="#" className="btnportal bg-transparent sm:w-auto block py-2 sm:py-0">Iniciar Sesión</Link>
+          <Link onClick={handleLinkClick} href="/login" className="btnportal bg-transparent sm:w-auto block py-2 sm:py-0">Iniciar Sesión</Link>
         </nav>
       </div>
     </header>
